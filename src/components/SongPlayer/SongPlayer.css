@@ -1,0 +1,25 @@
+.song-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.song-item-status,
+.song-name {
+    font-weight: bold;
+    width: 200px;
+    text-align: center;
+}
+
+.song-item-status.is-stop {
+    color: red;
+}
+
+.song-item-status.is-play {
+    color: blue;
+}
+
+.song-name.is-play {
+    border-bottom: 1px solid blue;
+}
