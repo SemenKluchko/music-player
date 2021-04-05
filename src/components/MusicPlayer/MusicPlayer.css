@@ -20,6 +20,10 @@
     color: blue;
 }
 
+.song-item-status.is-pause {
+    color: grey;
+}
+
 .song-name.is-play {
     border-bottom: 1px solid blue;
 }
