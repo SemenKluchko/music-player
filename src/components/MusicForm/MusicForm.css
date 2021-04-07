@@ -1,0 +1,24 @@
+.song-item-form {
+    width: 50%;
+    margin: 15px auto;
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.form-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-label {
+ display: inline-block;
+ padding: 0 15px;
+}
+
+.form-label {
+    display: block;
+    width: 100%;
+    flex-grow: 1;
+}
