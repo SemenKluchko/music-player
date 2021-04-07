@@ -60,22 +60,21 @@ function App() {
 }, []);
 
 const handleStop =  useCallback((name) => {
-  changeList((prevState) => {
-  const newState = prevState.map((song) => {
-    if (song.name === name) {
-      return {
-        id: song.id,
-        status: 'stop',
-        name: name,
-        pauser: 'Play',
-        stoper: 'Stop',
-      };
-    } 
-    return song;
-  });
-  return newState;
-  
-});
+      changeList((prevState) => {
+          const newState = prevState.map((song) => {
+            if (song.name === name) {
+                return {
+                  id: song.id,
+                  status: 'stop',
+                  name: name,
+                  pauser: 'Play',
+                  stoper: 'Stop',
+            };
+          } 
+          return song;
+        });
+      return newState;  
+      });
 }, []);
 
 const handleCreateSong = useCallback(() => {
@@ -83,47 +82,47 @@ const handleCreateSong = useCallback(() => {
 }, []);
 
 const createNewSongItem = useCallback((name, status) => {
-  changeList((prevState) => {
-    const newState = prevState.concat([{ id: generateId(), name, status, pauser: 'Play', stoper: 'Stop' } ]);
-    return newState;
-  })
+      changeList((prevState) => {
+        const newState = prevState.concat([{ id: generateId(), name, status, pauser: 'Play', stoper: 'Stop' } ]);
+        return newState;
+      })
   changeFormVisibility(false);
 }, []);
 
 const updateSongItem = useCallback((updatedSongID, updatedSongName, updatedSongStatus) => {
    changeList((prevState) => {
-   const newState = prevState.map((songItem) => {
-    if (songItem.id === updatedSongID) {
-      return {
-         id: songItem.id,
-         name: updatedSongName,
-         status: updatedSongStatus,
-         pauser: songItem.pauser,
-         stoper:  songItem.stoper,
-      } 
-    } else {
-      return songItem;
-    }
-   });
-   return newState;
- })
+        const newState = prevState.map((songItem) => {
+                if (songItem.id === updatedSongID) {
+                  return {
+                    id: songItem.id,
+                    name: updatedSongName,
+                    status: updatedSongStatus,
+                    pauser: songItem.pauser,
+                    stoper:  songItem.stoper,
+                  } 
+                } else {
+                  return songItem;
+                }
+          });
+          return newState;
+    })
   setEditable(null);
 }, []);
 
 const handleDelete = useCallback((id) => {
-changeList((prevState) => {
-  const newState = prevState.filter((songItem) => {
-    return songItem.id !== id;
-  });
-  return newState;
-})
+      changeList((prevState) => {
+          const newState = prevState.filter((songItem) => {
+              return songItem.id !== id;
+          });
+        return newState;
+        })
 }, []);
 
 const handleEdit = useCallback((id) => {
-const songFromList = list.find((songItem) => {
-  return songItem.id === id;
-});
-setEditable(songFromList);
+      const songFromList = list.find((songItem) => {
+        return songItem.id === id;
+      });
+  setEditable(songFromList);
 }, [list]);
 
 
