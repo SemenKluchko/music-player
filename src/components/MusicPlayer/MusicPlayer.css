@@ -1,14 +1,23 @@
 .song-item {
     display: flex;
+    margin: 2% auto;
     align-items: center;
     justify-content: center;
     padding: 15px;
 }
 
-.song-item-status,
+.song-item.card {
+    width: 50%;
+    text-align: center;
+}
+
 .song-name {
+    text-align: center;
+    width: 100%;
+}
+
+.song-item-status {
     font-weight: bold;
-    width: 200px;
     text-align: center;
 }
 

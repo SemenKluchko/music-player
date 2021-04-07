@@ -1,3 +1,4 @@
+import Button from 'react-bootstrap/Button';
 import { useCallback, useState } from 'react';
 import './MusicForm.css';
 
@@ -14,7 +15,7 @@ const MusicForm = (props) => {
         }
     }, [props, name, status]);
     return (
-        <form className="song-item-form" onSubmit={handleSubmit}>
+        <form className="song-item-form">
             <div className='form-item'>
                 <label className="form-label" htmlFor="state">State:</label>
                 <select 
@@ -40,7 +41,7 @@ const MusicForm = (props) => {
                 onChange={(event) => setName(event.target.value)}/>
             </div>
             <div className="centered">
-            <button>Save</button>
+            <Button onClick={handleSubmit}>Save</Button>
             </div>
         </form>
     )

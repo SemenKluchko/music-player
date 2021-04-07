@@ -146,7 +146,7 @@ setEditable(songFromList);
               );
         })};
         <div className="centered">
-            <Button onClick={handleCreateSong}>Create Song</Button>
+            <Button variant="success" size="lg" onClick={handleCreateSong}>Add Song</Button>
         </div>
         {isFormVisible ? (<MusicForm onSave={createNewSongItem}/>) : null}
         {editableSong ? (<MusicForm 

@@ -1,3 +1,6 @@
+import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
+import Card from 'react-bootstrap/Card';
 import { useCallback  } from 'react';
 import './MusicPlayer.css'
 
@@ -20,20 +23,20 @@ function MusicPlayer(props) {
   },[props])
 
     return (
-      <div className="wrapper">
-      <div className="song-item">
-        <div className={`song-name is-${props.status}`}>
+      <Card className="song-item">
+        <Card.Body>
+        <Card.Title className={`song-name is-${props.status}`}>
            {props.name}
-        </div>
-        <div className={`song-item-status is-${props.status}`}>
-            {props.status}
-        </div>
-        <button onClick={handleStatusChange}>{props.pauseBtn}</button>
-        <button onClick={handleStopSong}>{props.stopBtn}</button>
-        <button onClick={handleDeleteSong}>Delete</button>
-        <button onClick={handleEditSong}>Edit</button>
-      </div>
-      </div>
+        </Card.Title>
+        <Card.Text className={`song-item-status is-${props.status}`}>
+        <Badge variant="secondary">{props.status}</Badge>
+        </Card.Text>
+        <Button variant="outline-dark"onClick={handleStatusChange}>{props.pauseBtn}</Button>
+        <Button variant="outline-dark"onClick={handleStopSong}>{props.stopBtn}</Button>
+        <Button variant="danger" onClick={handleDeleteSong}>Delete</Button>
+        <Button variant="info" onClick={handleEditSong}>Edit</Button>
+      </Card.Body>
+      </Card>
     )
   }
 
